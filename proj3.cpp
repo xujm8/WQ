@@ -25,92 +25,100 @@ struct Path{
 
 Path finalPath;
 Spell allSpell[202];
-string oristr;
+string oriStr;
 int greatestval = -2000000000;
-int orilen, spellnum;
+int oriLen, spellNum;
 map<string, Path> midPath;
 /*
-void dfs(string rsstr, int val, Path & onePath) {
+void dfs(string rsStr, int val, Path & onePath) {
 	if (val > greatestval) {
 		greatestval = val;
 		finalPath = onePath;
 	}
 	//len()
 	bool endFlag = 0;
-	int rslen = rsstr.length();
-	for (int i = 0; i < spellnum; ++ i) {
+	int rslen = rsStr.length();
+	for (int i = 0; i < spellNum; ++ i) {
 		int splen = allSpell[i].word.length();
 		for (int j = 0; j <= rslen - splen; ++ j) {
 			endFlag = 1;
-			if (rsstr.substr(j, splen) == allSpell[i].word) {
+			if (rsStr.substr(j, splen) == allSpell[i].word) {
 				onePath.spstr.push_back(allSpell[i].word);
 				onePath.sppos.push_back(j);
-				dfs(rsstr.substr(0,j) + rsstr.substr(j+splen), val + allSpell[i].val, onePath);
+				dfs(rsStr.substr(0,j) + rsStr.substr(j+splen), val + allSpell[i].val, onePath);
 			}
 		}
 	}
 	if (!endFlag) {
-		midPath[rsstr] = 0;
+		midPath[rsStr] = 0;
 	} 
-	//map<string, Path>::iterator key = midPath.find(rsstr);
+	//map<string, Path>::iterator key = midPath.find(rsStr);
 	return;
 }*/
 
-Path findBest(string rsstr) {
+Path findBest(string rsStr) {
 	Path res;
 	res.val = 0;
-	if (rsstr.length() == 0) return res;
-	map<string, Path>::iterator key = midPath.find(rsstr);
+	if (rsStr.length() == 0) return res;
+	map<string, Path>::iterator key = midPath.find(rsStr);
 	if (key != midPath.end()) {
-		return midPath[rsstr];
+		return midPath[rsStr];
 	}
 	int val = -2000000000;
 	bool endFlag = 0;
-	int rslen = rsstr.length();
-	for (int i = 0; i < spellnum; ++ i) {
+	int rslen = rsStr.length();
+	for (int i = 0; i < spellNum; ++ i) {
 		int splen = allSpell[i].word.length();
 		for (int j = 0; j <= rslen - splen; ++ j) {
 			endFlag = 1;
-			if (rsstr.substr(j,splen) == allSpell[i].word) {
-				Path bestpart = findBest(rsstr.substr(0,j) + rsstr.substr(j+splen));
+			if (rsStr.substr(j,splen) == allSpell[i].word) {
+				Path bestpart = findBest(rsStr.substr(0,j) + rsStr.substr(j+splen));
 				if (val < allSpell[i].val + bestpart.val){
 					val = allSpell[i].val + bestpart.val;
 					res = bestpart;
 					res.val = bestpart.val + allSpell[i].val;
 					res.spstr.push_back(allSpell[i].word);
 					res.sppos.push_back(j);
-					midPath[rsstr] = res;
+					midPath[rsStr] = res;
 				}
 			}
 		}
 	}
 	if (!endFlag) {
-		midPath[rsstr] = res;
+		midPath[rsStr] = res;
 	}
 	return res;
 }
 
-
-int main () {
-	clock_t start = clock();
-	ifstream in("in");
+void readData(string fileName) {
+	ifstream in(fileName.c_str());
 	if (!in.is_open()) {
 		cout << "Error opening file\n";
-		return 0;
+		return;
 	}
-	in >> orilen >> spellnum >> oristr;
-	for (int i = 0; i < spellnum; ++ i){
+	in >> oriLen >> spellNum >> oriStr;
+	for (int i = 0; i < spellNum; ++ i){
 		in >> allSpell[i].word >> allSpell[i].val;
 	}
 	in.close();
-	Path finalPath = findBest(oristr);
+}
+
+void printSpell(string fileName, Path finalPath) {
 	int finalLen = finalPath.sppos.size();
-	ofstream out("out");
+	ofstream out(fileName.c_str());
 	for(int i = finalLen - 1; i >= 0; -- i) {
 		out << finalPath.sppos[i] << ' ' << finalPath.spstr[i] << endl;
 	}
 	out << finalPath.val;
 	out.close();
+}
+
+
+int main () {
+	clock_t start = clock();
+	readData("in.txt");
+	Path finalPath = findBest(oriStr);
+	printSpell("out.txt",finalPath);
 	clock_t finish = clock();
 	double duration = (double)(finish - start)/CLOCKS_PER_SEC;
 	cout << duration << endl;
