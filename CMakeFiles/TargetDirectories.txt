@@ -1,0 +1,16 @@
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/list_install_components.dir
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/install.dir
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/rebuild_cache.dir
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/edit_cache.dir
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/test.dir
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/Demo.dir
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/install/strip.dir
+/home/xujiaman/Desktop/CMaketest/CMakeFiles/install/local.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/list_install_components.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/install.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/rebuild_cache.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/edit_cache.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/MathFunctions.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/install/strip.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/install/local.dir
+/home/xujiaman/Desktop/CMaketest/math/CMakeFiles/test.dir

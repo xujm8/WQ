@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xujiaman/Desktop/CMaketest/config.h
+
+/home/xujiaman/Desktop/CMaketest/main.cpp
+iostream
+-
+stdlib.h
+-
+config.h
+/home/xujiaman/Desktop/CMaketest/config.h
+math/MathFunctions.h
+/home/xujiaman/Desktop/CMaketest/math/MathFunctions.h
+cmath
+-
+
+/home/xujiaman/Desktop/CMaketest/math/MathFunctions.h
+

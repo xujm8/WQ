@@ -1,0 +1,69 @@
+Start testing: Feb 08 17:52 CST
+----------------------------------------------------------
+1/4 Testing: test_run
+1/4 Test: test_run
+Command: "/home/xujiaman/Desktop/CMaketest/Demo" "5" "2"
+Directory: /home/xujiaman/Desktop/CMaketest
+"test_run" start time: Feb 08 17:52 CST
+Output:
+----------------------------------------------------------
+5^2 is 25
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_run" end time: Feb 08 17:52 CST
+"test_run" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: test_usage
+2/4 Test: test_usage
+Command: "/home/xujiaman/Desktop/CMaketest/Demo"
+Directory: /home/xujiaman/Desktop/CMaketest
+"test_usage" start time: Feb 08 17:52 CST
+Output:
+----------------------------------------------------------
+Usage /home/xujiaman/Desktop/CMaketest/Demo base exponent 
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"test_usage" end time: Feb 08 17:52 CST
+"test_usage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: test_10_5
+3/4 Test: test_10_5
+Command: "/home/xujiaman/Desktop/CMaketest/Demo" "10" "5"
+Directory: /home/xujiaman/Desktop/CMaketest
+"test_10_5" start time: Feb 08 17:52 CST
+Output:
+----------------------------------------------------------
+10^5 is 100000
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_10_5" end time: Feb 08 17:52 CST
+"test_10_5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: test_2_10
+4/4 Test: test_2_10
+Command: "/home/xujiaman/Desktop/CMaketest/Demo" "2" "10"
+Directory: /home/xujiaman/Desktop/CMaketest
+"test_2_10" start time: Feb 08 17:52 CST
+Output:
+----------------------------------------------------------
+2^10 is 1024
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[is 1024
+]
+"test_2_10" end time: Feb 08 17:52 CST
+"test_2_10" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 08 17:52 CST
